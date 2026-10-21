@@ -1,0 +1,160 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Registration - Online Book Store</title>
+    <link rel = "stylesheet" href = "style.css">
+    <script src="script.js"></script>
+</head>
+
+<body bgcolor="#F2F6FA">
+
+<table border="2" width="95%" align="center" cellspacing="0" cellpadding="5"
+       bordercolor="#34495E">
+
+    <!-- Header -->
+    <tr bgcolor="#2C3E50" height="80">
+        <td width="12%" align="center">
+            <img src="846imguf_LogoGLBajaj.jpg"
+                 width="55" height="55" alt="College Logo">
+        </td>
+        <td colspan="5" align="center">
+            <font color="white" size="6">
+                <b>ONLINE BOOK STORE</b>
+            </font>
+        </td>
+    </tr>
+
+    <!-- Navigation -->
+    <tr bgcolor="#3498DB" align="center">
+        <td><a href="index.html"><font color="white"><b>HOME</b></font></a></td>
+        <td><a href="login.html"><font color="white"><b>LOGIN</b></font></a></td>
+        <td><a href="catalogue.html"><font color="white"><b>CATALOGUE</b></font></a></td>
+        <td><a href="cart.html"><font color="white"><b>CART</b></font></a></td>
+        <td><a href="registration.html"><font color="white"><b>REGISTER</b></font></a></td>
+        <td><font color="white">Welcome to our Book Store</font></td>
+    </tr>
+
+    <!-- Registration Heading -->
+    <tr>
+        <td colspan="6" bgcolor="white" align="center">
+            <br>
+            <font color="#2C3E50" size="5">
+                <b>REGISTRATION FORM</b>
+            </font>
+            <br><br>
+        </td>
+    </tr>
+
+    <!-- Registration Form -->
+    <tr>
+        <td colspan="6" bgcolor="white" align="center">
+
+            <form onsubmit="return validateForm()">
+                <table border="0" cellspacing="8" cellpadding="5" align="center">
+
+                    <tr>
+                        <td align="right"><b>Name:</b></td>
+                        <td><input type="text" name="name"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><b>Password:</b></td>
+                        <td><input type="password" name="password"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><b>Email:</b></td>
+                        <td><input type="email" name="email"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><b>Phone Number:</b></td>
+                        <td><input type="text" name="phone"></td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><b>Sex:</b></td>
+                        <td>
+                            <input type="radio" name="sex" value="male"> Male
+                            <input type="radio" name="sex" value="female"> Female
+                            <input type="radio" name="sex" value="other"> Other
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><b>Date of Birth:</b></td>
+                        <td>
+                            <select name="day">
+                                <option value="">Day</option>
+                                <script>
+                                    for (var d = 1; d <= 31; d++) {
+                                        document.write("<option>" + d + "</option>");
+                                    }
+                                </script>
+                            </select>
+
+                            <select name="month">
+                                <option value="">Month</option>
+                                <option>January</option>
+                                <option>February</option>
+                                <option>March</option>
+                                <option>April</option>
+                                <option>May</option>
+                                <option>June</option>
+                                <option>July</option>
+                                <option>August</option>
+                                <option>September</option>
+                                <option>October</option>
+                                <option>November</option>
+                                <option>December</option>
+                            </select>
+
+                            <select name="year">
+                                <option value="">Year</option>
+                                <script>
+                                    for (var y = 2000; y <= 2010; y++) {
+                                        document.write("<option>" + y + "</option>");
+                                    }
+                                </script>
+                            </select>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right"><b>Language Known:</b></td>
+                        <td>
+                            <input type="checkbox" name="language" value="english"> English
+                            <input type="checkbox" name="language" value="hindi"> Hindi
+                            <input type="checkbox" name="language" value="urdu"> Urdu
+                            <input type="checkbox" name="language" value="other"> Other
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td align="right" valign="top"><b>Address:</b></td>
+                        <td>
+                            <textarea name="address" rows="4" cols="30"></textarea>
+                        </td>
+                    </tr>
+
+                    <tr>
+                        <td colspan="2" align="center">
+                            <br>
+                            <input type="submit" value="Register">
+                            &nbsp;&nbsp;
+                            <input type="reset" value="Reset">
+                        </td>
+                    </tr>
+
+                </table>
+            </form>
+
+            <br>
+        </td>
+    </tr>
+
+</table>
+
+</body>
+</html>

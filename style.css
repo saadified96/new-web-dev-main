@@ -1,0 +1,640 @@
+
+/* =====================================================
+   GL BAJAJ ONLINE BOOK STORE
+   Premium High-Tech Design System
+   ===================================================== */
+
+/* 1. GOOGLE FONTS */
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+
+
+/* 2. DESIGN TOKENS */
+:root {
+    --navy: #0b1220;
+    --navy-light: #14243b;
+    --blue: #3563f5;
+    --blue-hover: #244de0;
+    --teal: #12b8a6;
+    --gold: #e8bc68;
+
+    --page-bg: #edf2f8;
+    --surface: #ffffff;
+    --surface-soft: #f5f8fc;
+
+    --text: #17253b;
+    --muted: #68788e;
+    --border: #dce5f0;
+
+    --radius: 14px;
+    --shadow: 0 12px 35px rgba(11, 18, 32, 0.09);
+    --shadow-hover: 0 18px 40px rgba(11, 18, 32, 0.15);
+}
+
+
+/* 3. GLOBAL RESET */
+* {
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    padding: 32px 16px;
+    color: var(--text);
+    background-color: var(--page-bg);
+
+    /* Local background image for the whole page */
+    background-image:
+        linear-gradient(
+            rgba(237, 242, 248, 0.88),
+            rgba(237, 242, 248, 0.94)
+        ),
+        url("library-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+
+    font-family: 'DM Sans', Arial, sans-serif;
+    font-size: 15px;
+    line-height: 1.65;
+}
+
+h1, h2, h3 {
+    color: var(--navy);
+    font-family: 'Space Grotesk', sans-serif;
+    line-height: 1.25;
+}
+
+h1 {
+    font-size: clamp(26px, 4vw, 38px);
+}
+
+h2 {
+    font-size: clamp(23px, 3vw, 30px);
+}
+
+p {
+    color: var(--muted);
+}
+
+a {
+    color: var(--blue);
+    text-decoration: none;
+    transition: color 0.25s ease;
+}
+
+a:hover {
+    color: var(--teal);
+}
+
+img {
+    max-width: 100%;
+}
+
+
+/* 4. MAIN PAGE CONTAINERS */
+body > table {
+    width: 95%;
+    max-width: 1280px;
+    margin: 0 auto 25px;
+    padding: 0;
+
+    border: 1px solid rgba(220, 229, 240, 0.9) !important;
+    border-spacing: 0;
+    border-collapse: separate;
+    border-radius: 18px;
+    overflow: hidden;
+
+    background: var(--surface);
+    box-shadow: var(--shadow);
+}
+
+
+/* 5. HEADER — ALL PAGES */
+body > table > tbody > tr:first-child {
+    background-color: var(--navy) !important;
+    background-image:
+        linear-gradient(
+            115deg,
+            rgba(11, 18, 32, 0.98),
+            rgba(20, 49, 78, 0.97),
+            rgba(20, 88, 100, 0.92)
+        ),
+        url("images/library-bg.jpg") !important;
+
+    background-size: cover;
+    background-position: center;
+}
+
+body > table > tbody > tr:first-child > td {
+    padding: 20px 16px;
+    color: #ffffff !important;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+}
+
+/* Store name */
+body > table > tbody > tr:first-child h1,
+body > table > tbody > tr:first-child font {
+    color: #ffffff !important;
+    font-family: 'Space Grotesk', sans-serif;
+    font-weight: 700;
+    letter-spacing: 1.5px;
+}
+
+/* Header logo */
+body > table > tbody > tr:first-child img {
+    width: 62px;
+    height: 62px;
+    object-fit: contain;
+    padding: 4px;
+    border: 2px solid var(--gold);
+    border-radius: 12px;
+    background: #ffffff;
+    transition: transform 0.3s ease;
+}
+
+body > table > tbody > tr:first-child img:hover {
+    transform: scale(1.06);
+}
+
+
+/* 6. NAVIGATION BAR */
+body > table > tbody > tr:nth-child(2):has(a) {
+    background: #ffffff !important;
+}
+
+body > table > tbody > tr:nth-child(2) > td {
+    padding: 17px 10px;
+    text-align: center;
+    vertical-align: middle;
+    border: none;
+    border-bottom: 1px solid var(--border);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+}
+
+body > table > tbody > tr:nth-child(2) a {
+    display: inline-block;
+    padding: 5px 4px;
+    color: #34445b;
+    transition: color 0.25s ease, transform 0.25s ease;
+}
+
+body > table > tbody > tr:nth-child(2) a:hover {
+    color: var(--blue);
+    transform: translateY(-2px);
+}
+
+body > table > tbody > tr:nth-child(2) a font {
+    color: inherit !important;
+    font-family: 'DM Sans', sans-serif;
+    font-size: inherit;
+}
+
+body > table > tbody > tr:nth-child(2) > td:last-child {
+    color: var(--muted) !important;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+
+/* 7. DEFAULT CONTENT CELLS */
+body > table > tbody > tr > td {
+    border-color: var(--border);
+}
+
+body > table > tbody > tr:not(:first-child) > td {
+    color: var(--text);
+}
+
+/* Replace legacy font colors */
+body > table font {
+    font-family: 'DM Sans', sans-serif;
+}
+
+body > table font[color] {
+    color: var(--text);
+}
+
+
+/* 8. DEPARTMENT SIDEBAR
+   Used by index, catalogue and department pages */
+body > table > tbody > tr:has(> td:first-child a[href="cse.html"]) > td:first-child,
+body > table > tbody > tr:has(> td:first-child a[href="ece.html"]) > td:first-child {
+    width: 18%;
+    padding: 25px 15px;
+    vertical-align: top;
+
+    background-color: #eaf5f6 !important;
+    background-image:
+        linear-gradient(
+            rgba(234, 245, 246, 0.96),
+            rgba(234, 245, 246, 0.96)
+        ),
+        url("images/library-bg.jpg");
+
+    background-size: cover;
+    background-position: center;
+    border-right: 1px solid #d7e8ec;
+}
+
+/* Sidebar links */
+body > table > tbody > tr:has(> td:first-child a[href="cse.html"]) > td:first-child a,
+body > table > tbody > tr:has(> td:first-child a[href="ece.html"]) > td:first-child a {
+    display: inline-block;
+    margin: 7px 0;
+    padding: 11px 15px;
+    border: 1px solid #dce8ed;
+    border-radius: 9px;
+
+    background: rgba(255, 255, 255, 0.94);
+    color: #175b70 !important;
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 14px;
+    font-weight: 600;
+
+    box-shadow: 0 3px 10px rgba(20, 49, 78, 0.04);
+    transition: all 0.25s ease;
+}
+
+body > table > tbody > tr:has(> td:first-child a[href="cse.html"]) > td:first-child a:hover,
+body > table > tbody > tr:has(> td:first-child a[href="ece.html"]) > td:first-child a:hover {
+    color: #ffffff !important;
+    background: var(--blue);
+    border-color: var(--blue);
+    transform: translateX(4px);
+}
+
+
+/* 9. WELCOME / MAIN CONTENT PANEL */
+body > table > tbody > tr:has(> td[colspan]) > td[colspan],
+body > table > tbody > tr > td[colspan] {
+    background-color: #ffffff;
+}
+
+/* Main headings */
+body > table h2 {
+    margin: 16px 0;
+    font-weight: 700;
+    letter-spacing: -0.6px;
+}
+
+/* Content paragraphs */
+body > table p {
+    line-height: 1.8;
+}
+
+
+/* 10. ALL NESTED TABLES
+   Catalogue, cart and department book tables */
+table table {
+    width: 96%;
+    margin: 18px auto;
+    border: 1px solid var(--border);
+    border-collapse: separate;
+    border-spacing: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    background: #ffffff;
+    box-shadow: 0 5px 20px rgba(11, 18, 32, 0.04);
+}
+
+/* Table headers */
+table table th {
+    padding: 15px 12px;
+    color: #ffffff;
+    background: var(--navy-light) !important;
+    border: none;
+    border-bottom: 2px solid var(--teal);
+    font-family: 'Space Grotesk', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    text-align: center;
+}
+
+/* Table cells */
+table table td {
+    padding: 13px 12px;
+    background: #ffffff;
+    border: none;
+    border-bottom: 1px solid #e9eef5;
+    color: var(--text);
+    vertical-align: middle;
+}
+
+/* Alternating row colors */
+table table tr:nth-child(even) td {
+    background: #f6f9fd;
+}
+
+table table tr:hover td {
+    background: #edf5ff;
+}
+
+/* Book covers */
+table table img {
+    width: 90px;
+    height: 120px;
+    object-fit: contain;
+    padding: 4px;
+    background: #ffffff;
+    border-radius: 6px;
+    box-shadow: 0 4px 12px rgba(11, 18, 32, 0.12);
+    transition: transform 0.25s ease;
+}
+
+table table img:hover {
+    transform: scale(1.04);
+}
+
+/* Book names */
+table table td b {
+    color: #173c60;
+}
+
+
+/* 11. BUTTONS */
+button,
+input[type="button"],
+input[type="submit"],
+input[type="reset"] {
+    display: inline-block;
+    padding: 11px 20px;
+    margin: 5px;
+
+    border: 1px solid transparent;
+    border-radius: 9px;
+
+    background: var(--blue);
+    color: #ffffff;
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.2px;
+
+    cursor: pointer;
+    box-shadow: 0 4px 12px rgba(53, 99, 245, 0.16);
+    transition: all 0.25s ease;
+}
+
+button:hover,
+input[type="button"]:hover,
+input[type="submit"]:hover {
+    background: var(--blue-hover);
+    transform: translateY(-2px);
+    box-shadow: 0 7px 18px rgba(53, 99, 245, 0.25);
+}
+
+/* Reset and clear buttons */
+input[type="reset"] {
+    color: #34445b;
+    background: #e8eef6;
+    box-shadow: none;
+}
+
+input[type="reset"]:hover {
+    color: #ffffff;
+    background: #52647b;
+}
+
+
+/* 12. CART PAGE */
+body > table > tbody > tr > td[colspan="5"],
+body > table > tbody > tr > td[colspan="4"] {
+    background-color: #ffffff;
+}
+
+/* Cart total row */
+body > table > tbody > tr:has(> td[colspan="4"]) {
+    background: #e9f6f5 !important;
+}
+
+body > table > tbody > tr:has(> td[colspan="4"]) td {
+    color: #125e60;
+    font-weight: 700;
+}
+
+/* Cart page price emphasis */
+body > table > tbody > tr > td font[size="4"] {
+    color: #087f76 !important;
+    font-weight: 700;
+}
+
+
+/* 13. DEPARTMENT BOOK PAGES */
+body > table > tbody > tr > td > table th {
+    background: #14243b !important;
+}
+
+body > table > tbody > tr > td > table td {
+    font-size: 14px;
+}
+
+
+/* 14. LOGIN & REGISTRATION FORMS */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+    width: 100%;
+    max-width: 340px;
+    padding: 11px 13px;
+
+    border: 1px solid #ccd8e6;
+    border-radius: 8px;
+
+    background: #f8fafd;
+    color: var(--text);
+
+    font-family: 'DM Sans', sans-serif;
+    font-size: 14px;
+
+    outline: none;
+    transition: border-color 0.25s ease, box-shadow 0.25s ease;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+    border-color: var(--blue);
+    background: #ffffff;
+    box-shadow: 0 0 0 4px rgba(53, 99, 245, 0.12);
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    accent-color: var(--blue);
+    cursor: pointer;
+}
+
+textarea {
+    resize: vertical;
+}
+
+/* Form labels */
+form b {
+    color: #243c56;
+    font-size: 14px;
+}
+
+/* Login table and registration form tables */
+body > table[width="50%"] {
+    width: 50%;
+    max-width: 650px;
+    margin: 45px auto;
+}
+
+body > table > tbody > tr > td > form > table {
+    width: auto;
+    max-width: 100%;
+    border: none;
+    box-shadow: none;
+    border-radius: 0;
+}
+
+body > table > tbody > tr > td > form > table td {
+    padding: 8px;
+    border: none;
+    background: transparent;
+}
+
+body > table > tbody > tr > td > form > table tr:hover td {
+    background: transparent;
+}
+
+
+/* 15. ACCESSIBILITY */
+a:focus-visible,
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible {
+    outline: 3px solid var(--gold);
+    outline-offset: 3px;
+}
+
+
+/* 16. RESPONSIVE DESIGN */
+@media (max-width: 900px) {
+    body {
+        padding: 18px 8px;
+        background-attachment: scroll;
+    }
+
+    body > table {
+        width: 100%;
+    }
+
+    table table {
+        width: 100%;
+    }
+
+    body > table > tbody > tr:nth-child(2) > td {
+        padding: 12px 5px;
+        font-size: 11px;
+    }
+
+    table table th,
+    table table td {
+        padding: 10px 7px;
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        padding: 8px 4px;
+        font-size: 13px;
+    }
+
+    body > table {
+        border-radius: 10px;
+    }
+
+    body > table > tbody > tr:first-child > td {
+        padding: 12px 5px;
+    }
+
+    body > table > tbody > tr:first-child img {
+        width: 43px;
+        height: 43px;
+    }
+
+    body > table > tbody > tr:first-child h1,
+    body > table > tbody > tr:first-child font {
+        font-size: 19px;
+        letter-spacing: 0.5px;
+    }
+
+    body > table > tbody > tr:nth-child(2) > td {
+        padding: 9px 3px;
+        font-size: 10px;
+        overflow-wrap: anywhere;
+    }
+
+    body > table > tbody > tr:nth-child(2) a {
+        padding: 3px 1px;
+    }
+
+    table table {
+        display: block;
+        overflow-x: auto;
+        white-space: normal;
+    }
+
+    body > table[width="50%"] {
+        width: 96%;
+        margin: 20px auto;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    input[type="email"],
+    select,
+    textarea {
+        max-width: 100%;
+    }
+
+    button,
+    input[type="button"],
+    input[type="submit"],
+    input[type="reset"] {
+        padding: 10px 12px;
+        font-size: 12px;
+    }
+}
+
+
+/* Color the rectangle beside the logo on the home page */
+body > table > tbody > tr:first-child > td:nth-child(2) {
+    background: linear-gradient(
+        120deg,
+        #14243b 0%,
+        #155e75 65%,
+        #0f766e 100%
+    ) !important;
+
+    color: #ffffff !important;
+    border: none !important;
+    border-left: 3px solid #e8bc68 !important;
+}
+
+/* Ensure the store title is visible */
+body > table > tbody > tr:first-child > td:nth-child(2) font,
+body > table > tbody > tr:first-child > td:nth-child(2) b {
+    color: #ffffff !important;
+    font-family: 'Space Grotesk', sans-serif;
+    letter-spacing: 2px;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+}
